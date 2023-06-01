@@ -9,8 +9,8 @@ const AddresInfoForm = ({ data, updateFieldHandler, errors }) => {
         if (cep.length === 8 ||
             (cep.length === 9 && cep.includes("-", 5))){
         fetch(`https://viacep.com.br/ws/${cep}/json`)
-        .then((res)=> res.json())
-        .then((data) => {
+            .then((res)=> res.json())
+            .then((data) => {
 
             if(!("erro" in data)){
                 updateFieldHandler("rua", data.logradouro)

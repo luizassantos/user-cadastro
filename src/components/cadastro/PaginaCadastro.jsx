@@ -7,6 +7,8 @@ import LoginInfoForm from './LoginInfoForm';
 import AddressInfoForm from './AddressInfoForm';
 import EndForm from './EndForm';
 
+import axios from 'axios';
+
 import useForm from '../../hooks/useForm';
 import { useState } from 'react';
 import PaginaLogin from '../login/PaginaLogin';
@@ -82,7 +84,8 @@ function validateFields(value,currentStep){
 const PaginaCadastro = () => {
 
   const [data, setData] = useState(formTemplate);
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState({});
+  const [msg, setMsg] = useState("");
 
   const updateFieldHandler = (key, value) => {
     setData((prevItem) => {
@@ -97,6 +100,16 @@ const PaginaCadastro = () => {
         ];
 
   const {currentStep, currentComponent, changeStep, isLastStep, isFirstStep} = useForm(formComponents);
+
+  async function submitUser(user){
+    try{
+      await axios.post("http://localhost:3001/users", user);
+      setMsg("Sucesso!!")
+
+    } catch(erro){
+        setMsg(erro)
+    }
+  }
 
   return (
     <div className="container-pagCadastro">
@@ -116,6 +129,10 @@ const PaginaCadastro = () => {
               } else {
                 console.log(errors);
                 changeStep(currentStep + 1, e)
+
+                if(isLastStep){
+                  submitUser(data)
+                }
               }
             }
           }> 
@@ -140,11 +157,12 @@ const PaginaCadastro = () => {
                 <GrFormNext className='icon'/>
               </button>
             ) : 
-              <button className='btn' type='button'>
+              <button className='btn' type='submit'>
                 <span>Enviar</span>
                 <FiSend  />
               </button>
             }
+            <p>{msg}</p>
           </div>
         </form>
       </div>
