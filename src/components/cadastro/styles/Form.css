@@ -16,8 +16,19 @@ label{
     margin-bottom: 15px;
 }
 
+.input-s-erro{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #f07676;
+    margin-bottom: 15px;
+}
+
 .input-s:focus{
     border-color: #d69c9c;
+}
+
+.input-s-erro:focus{
+    border-color: #f05858;
 }
 
 .empty{

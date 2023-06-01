@@ -53,7 +53,7 @@ const LoginInfoForm = ({ data, updateFieldHandler, errors }) => {
                      && <span className="empty">{errors.confsenha}</span> }
                 <input 
                     type="password" id="confsenha-input" 
-                    className="input-s"
+                    className={!data.confsenha && errors.confsenha ? "input-s-erro" : "input-s"}
                     name='confsenha'
                     placeholder="Sua senha"
                     value={data.confsenha || ""}

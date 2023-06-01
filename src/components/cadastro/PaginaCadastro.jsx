@@ -142,7 +142,17 @@ const PaginaCadastro = () => {
           </div>
 
           <div className="actions">
-            {!isFirstStep ? (
+            
+
+            {msg === "Sucesso!!" ? (
+              <>
+                <p style={{color:"green"}}>Cadastro Realizado com sucesso!</p>
+                <a href={<PaginaLogin/>}>Fazer Login</a> 
+              </>
+              
+              ):(
+              <>
+              {!isFirstStep ? (
                 <button className='btn btn-voltar' type='button' onClick={() => changeStep(currentStep - 1)}>
                   <GrFormPrevious />
                   <span>Voltar</span>
@@ -150,19 +160,21 @@ const PaginaCadastro = () => {
             ) : (
                <a href={<PaginaLogin/>}> Já tenho conta! </a>
             )}
+            
+              {!isLastStep ? (
+                <button className='btn' type='submit'>
+                  <span>Avançar</span>
+                  <GrFormNext className='icon'/>
+                </button>
+              ) : 
+                <button className='btn' type='submit'>
+                  <span>Enviar</span>
+                  <FiSend  />
+                </button>
+              }
+              </>
 
-            {!isLastStep ? (
-              <button className='btn' type='submit'>
-                <span>Avançar</span>
-                <GrFormNext className='icon'/>
-              </button>
-            ) : 
-              <button className='btn' type='submit'>
-                <span>Enviar</span>
-                <FiSend  />
-              </button>
-            }
-            <p>{msg}</p>
+            )}
           </div>
         </form>
       </div>
