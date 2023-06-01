@@ -1,0 +1,11 @@
+.titulo{
+    text-align: center;
+    font-size: 30px;
+    color: brown
+}
+
+.subtitulo{
+    text-align: center;
+    font-size: 16px;
+    margin: 12px 0 20px 0;
+}

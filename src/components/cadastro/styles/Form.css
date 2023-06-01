@@ -1,0 +1,30 @@
+input{
+    outline: 0;
+}
+
+label{
+    font-size: 16px;
+    font-style: bolder;
+    color: brown;
+    transition: all 0.2s;
+}
+
+.input-s{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.input-s:focus{
+    border-color: #d69c9c;
+}
+
+.empty{
+    font-size: 12px;
+    color:red;
+    margin-top: 0;
+    padding-left: 10px;
+}
+
+

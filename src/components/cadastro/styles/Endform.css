@@ -1,0 +1,21 @@
+.endform-container{
+    margin-bottom: 30px
+}
+
+.main-title{
+    text-align: center;
+    font-size: 30px;
+    color: brown;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+h3{
+    text-align: center;
+    margin: 15px;
+}

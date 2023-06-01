@@ -1,0 +1,19 @@
+
+.endereco-input-block{
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template: auto auto auto auto / auto auto;
+    column-gap: 10px;
+}
+
+.input-rua{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    
+}
+
+.input-estado{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
