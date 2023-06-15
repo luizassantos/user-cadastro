@@ -158,7 +158,7 @@ const PaginaCadastro = () => {
                   <span>Voltar</span>
                 </button>
             ) : (
-               <a href={<PaginaLogin/>}> Já tenho conta! </a>
+               <a href={"/login"}> Já tenho conta! </a>
             )}
             
               {!isLastStep ? (

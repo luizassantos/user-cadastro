@@ -1,0 +1,15 @@
+.navbar-container{
+    background-color: #a54958;
+    width: 100vw;
+    padding: 1.5rem 1rem;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+li{
+    list-style: none;
+}

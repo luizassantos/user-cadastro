@@ -2,14 +2,16 @@ import './App.css';
 import PaginaCadastro from './components/cadastro/PaginaCadastro';
 import PaginaLogin from './components/login/PaginaLogin';
 
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   
 
   return (
     <div className='App'>
-      <PaginaLogin />
-      
+      <Navbar />
+      <Outlet/>
     </div>
   );
 }
