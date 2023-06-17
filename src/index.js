@@ -5,22 +5,12 @@ import App from './App';
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Home from "./routes/Home";
-import UserInfo from "./routes/UserInfo";
-import PaginaLogin from './components/login/PaginaLogin';
-
 import { UserProvider } from './context/UserContext';
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home />
-//   },
-//   {
-//     path: "userinfo",
-//     element: <UserInfo />
-//   },
-// ]);
+import Home from "./pages/home/Home";
+import UserInfo from "./pages/userInfo/UserInfo";
+import PaginaLogin from './pages/login/PaginaLogin';
+import Carrinho from './pages/carrinho/Carrinho';
 
 const router = createBrowserRouter([
   {
@@ -35,10 +25,14 @@ const router = createBrowserRouter([
         path: "userinfo",
         element: <UserInfo />
       },
+      {
+        path: "carrinho",
+        element: <Carrinho />
+      }
     ]
   },
   {
-    path: "login",
+    path: "/login",
     element: <PaginaLogin/>
   }
 ]);

@@ -1,16 +1,17 @@
 import { useState, useContext } from "react";
-import PaginaCadastro from "../cadastro/PaginaCadastro";
+import PaginaCadastro from "../../components/cadastro/PaginaCadastro";
 import './PaginaLogin.css'
 import axios from "axios";
-import UserInfo from "../../routes/UserInfo";
+// import UserInfo from "../../pages/userInfo/UserInfo";
 
 import { UserContext } from "../../context/UserContext";
 
-import { Navigate, Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const PaginaLogin = () => {
 
     const {userData, setUserData} = useContext(UserContext);
+    const {isUserLogged, setIsUserLogged} = useContext(UserContext);
 
     const [isCadastrar, setIsCadastrar] = useState(false);
     const [isLoginSucceeded, setIsLoginSucceeded] = useState(false);
@@ -38,7 +39,8 @@ const PaginaLogin = () => {
                 console.log("Login feito com sucesso");
                 console.log(resp.data[0]);
                 setUserData(resp.data[0]);
-                setIsLoginSucceeded(true)
+                setIsLoginSucceeded(true);
+                setIsUserLogged(true);
             }
     
         } catch(erro){
@@ -48,9 +50,9 @@ const PaginaLogin = () => {
 
     return (        
         <div className="body-login">
-            {isCadastrar ? <PaginaCadastro/> : (
+            {isCadastrar ? <PaginaCadastro setIsCadastrar={setIsCadastrar}/> : (
                 <div className="container-login">
-                    {isLoginSucceeded ? <Navigate to="/userinfo" />  :(
+                    {isLoginSucceeded ? <Navigate to="/home" />  :(
                         <>
                             <h1 className="title-login">Fazer Login</h1>
                             {isLoginFail && <p style={{color:"red"}}>Usuário não encontrado</p>}

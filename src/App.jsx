@@ -1,6 +1,6 @@
 import './App.css';
 import PaginaCadastro from './components/cadastro/PaginaCadastro';
-import PaginaLogin from './components/login/PaginaLogin';
+import PaginaLogin from './pages/login/PaginaLogin';
 
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';

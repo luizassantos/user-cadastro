@@ -1,0 +1,42 @@
+.single-data-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 0.5px solid gray;
+    border-radius: 7px;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 50vw;
+}
+
+
+.infopage-dataTitles{
+    font-weight: bold;
+}
+
+.infopage-dados{
+    line-height: 2rem;
+}
+
+.div-button{
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#btn-edit{
+    cursor: pointer;
+}
+
+#btn-edit:hover{
+    color: #f3b806
+}
+
+/* .userinfo-btn{
+    margin-bottom: 5px;
+} */
+
+.btn-salvar{
+    margin-bottom: 5px;
+}

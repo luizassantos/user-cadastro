@@ -1,23 +1,47 @@
 import React from 'react'
 import './Navbar.css'
 
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 const Navbar = () => {
+
+  const {userData, setUserData} = useContext(UserContext);
+  const {isUserLogged, setIsUserLogged} = useContext(UserContext);
+  const {setIsEdit} = useContext(UserContext);
+
+  const handleLogoutClick = () => {
+      setUserData("");
+      setIsUserLogged(false);
+      setIsEdit(false);
+  }
+  
+
   return (
     <nav className='navbar-container'>
-      <ul>
+      <ul className='navbar-ul'>
         <li>
             <Link style={{color:"white"}} to="/home">Home</Link>
         </li>
-        <li  >
-            <Link style={{color:"white"}} to="/userinfo">Minhas Informações</Link>
-        </li>
+        {isUserLogged ? (
+            <>
+              <li>
+                  <Link style={{color:"white"}} to="/userinfo">Minhas Informações</Link>
+              </li>
+              <li>
+                  <Link to="/home" onClick={handleLogoutClick} style={{color:"white"}}>Logout</Link>
+              </li>
+            </>
+        ) : (
+          <li>
+              <Link  style={{color:"white"}} to="/login">Login</Link>
+          </li>
+        )
+        }
         <li>
-            <Link style={{color:"white"}} to="#">Carrinho</Link>
-        </li>
-        <li>
-            <Link style={{color:"white"}} to="#">Logout</Link>
+            <Link style={{color:"white"}} to="/carrinho">Carrinho</Link>
         </li>
        
       </ul>

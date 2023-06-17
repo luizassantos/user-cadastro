@@ -5,12 +5,12 @@ const EndForm = ({ data }) => {
     return (
         <div className='endform-container'>
             <h2 className='main-title'>Verificação de dados</h2>
-            <h3 className='title'>
+            <h3 className='title endform-h3'>
                 Você chegou à última etapa de cadastro! <br />
                 Verifique seus dados para finalizar
             </h3>
             
-            <h3>Login</h3>
+            <h3 className='endform-h3'>Login</h3>
             <p className='dados'>Nome: {data.nome}</p>
             <p className='dados'>E-mail: {data.email}</p>
             <p className='dados'>Senha: {data.senha}</p>

@@ -1,0 +1,73 @@
+.infopage-container{
+    margin: 10px 25px;
+}
+
+.infopage-subtitle{
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.infopage-data-container{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.info-h3-subtitle{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.info-update-instructions{
+    text-align: center;
+    line-height: 2rem;
+    padding-top: 8%;
+}
+
+.info-update-instructions h4 {
+    font-weight: lighter;
+}
+
+.btn-update-info{
+    padding: 7px 15px;
+    margin-right: 5px;
+    margin-top: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bolder;
+    cursor: pointer;
+    text-align: center;
+
+    border: 1px solid brown;
+    background-color: white;
+    color: brown;
+}
+
+.btn-update-info:hover{
+    background-color: #f9e5e5;
+}
+
+.div-btn-excluir{
+    margin: 30px 0 50px 0;
+    width: 100vw;
+    text-align: center;
+}
+
+.btn-excluir-conta{
+    padding: 10px 20px;
+    margin-right: 5px;
+    margin-top: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bolder;
+    cursor: pointer;
+    text-align: center;
+
+    border: 0;
+    background-color: rgb(204, 21, 21);
+    color: white;
+}
+
+.btn-excluir-conta:hover{
+    background-color: red;
+}
+

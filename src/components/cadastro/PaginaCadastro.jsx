@@ -11,7 +11,9 @@ import axios from 'axios';
 
 import useForm from '../../hooks/useForm';
 import { useState } from 'react';
-import PaginaLogin from '../login/PaginaLogin';
+import PaginaLogin from '../../pages/login/PaginaLogin';
+
+import { Link } from 'react-router-dom';
 
 const formTemplate = {
   nome: "",
@@ -23,7 +25,8 @@ const formTemplate = {
   bairro: "",
   cidade: "",
   estado: "",
-  pais: ""
+  pais: "",
+  cart: []
 }
 
 
@@ -81,8 +84,8 @@ function validateFields(value,currentStep){
 }
 
 
-const PaginaCadastro = () => {
-
+const PaginaCadastro = ({setIsCadastrar}) => {
+  
   const [data, setData] = useState(formTemplate);
   const [errors, setErrors] = useState({});
   const [msg, setMsg] = useState("");
@@ -109,6 +112,10 @@ const PaginaCadastro = () => {
     } catch(erro){
         setMsg(erro)
     }
+  }
+
+  const handleClick = () => {
+    setIsCadastrar(false)
   }
 
   return (
@@ -147,7 +154,7 @@ const PaginaCadastro = () => {
             {msg === "Sucesso!!" ? (
               <>
                 <p style={{color:"green"}}>Cadastro Realizado com sucesso!</p>
-                <a href={<PaginaLogin/>}>Fazer Login</a> 
+                <button onClick={handleClick}>Fazer Login</button> 
               </>
               
               ):(
