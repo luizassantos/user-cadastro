@@ -98,8 +98,8 @@ const UserInfo = () => {
               <button className='btn-excluir-conta' onClick={deleteAccount}>EXCLUIR CONTA</button>
             </div>
 
-            {/* {isAccountDeleted && <Navigate to="/home"/>} */}
-            {isAccountDeleted && window.location.reload}
+            {isAccountDeleted && <Navigate to="/home"/>}
+            {isAccountDeleted && window.location.reload(false)}
 
       </div>
 
