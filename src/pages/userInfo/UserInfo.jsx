@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import { Navigate } from 'react-router-dom'
-
 import { useContext } from 'react'
 import { UserContext } from '../../context/UserContext'
 
@@ -12,8 +10,6 @@ import axios from 'axios'
 const UserInfo = () => {
 
   const {userData, setIsEdit, isEdit} = useContext(UserContext); 
-  const [isAccountDeleted, setIsAccountDeleted] = useState(false)
-
 
   const handleUpdateButton = () => {
     setIsEdit(true);
@@ -42,14 +38,13 @@ const UserInfo = () => {
   const deleteAccount = async () => {
      await axios.delete(`http://localhost:3001/users/${userData.id}`)
      alert("Conta deletada com sucesso!")
-     setIsAccountDeleted(true)
   }
 
   return (
     <div>
-      <h1>Sua conta</h1>
 
       <div className='infopage-container'>
+            <h1 className='page-name'>Sua conta</h1>
             <h2 className='infopage-title'>Olá, {userData.nome}</h2>
             <h3 className='infopage-subtitle'>
               Esses são seus dados e informações!
@@ -86,25 +81,24 @@ const UserInfo = () => {
                 </div>
               ) : (
                 <div>
-                  <button onClick={handleCancelButton}> Cancelar </button>
-                  <button onClick={updateUserInfo}> Salvar </button>
+                  <button onClick={updateUserInfo} className='btn'> ATUALIZAR </button>
+                  <button onClick={handleCancelButton} className='btn-update-info'> CANCELAR </button>
 
                 </div>
-              )
-              }
+              )}
             </div>
 
             <div className='div-btn-excluir'>
-              <button className='btn-excluir-conta' onClick={deleteAccount}>EXCLUIR CONTA</button>
+              <a href='/home'>
+                <button 
+                  className='btn-excluir-conta' 
+                  onClick={deleteAccount}
+                >
+                    EXCLUIR CONTA
+                </button>
+              </a>
             </div>
-
-            {isAccountDeleted && <Navigate to="/home"/>}
-            {isAccountDeleted && window.location.reload(false)}
-
       </div>
-
-    
-
     </div>
   )
 }

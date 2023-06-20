@@ -6,9 +6,12 @@ import { Link, Navigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 
+import {BiCart} from 'react-icons/bi'
+import {FaRegUser} from 'react-icons/fa'
+
 const Navbar = () => {
 
-  const {userData, setUserData} = useContext(UserContext);
+  const {setUserData} = useContext(UserContext);
   const {isUserLogged, setIsUserLogged} = useContext(UserContext);
   const {setIsEdit} = useContext(UserContext);
 
@@ -22,27 +25,37 @@ const Navbar = () => {
   return (
     <nav className='navbar-container'>
       <ul className='navbar-ul'>
-        <li>
-            <Link style={{color:"white"}} to="/home">Home</Link>
+        <li className='produtos-link'>
+            <Link style={{color:"white", textDecoration:"none"}} to="/home">PRODUTOS</Link>
         </li>
+
+        <li className='logo'>
+          <Link to="/home" className='logo'> LutasPRO </Link>
+        </li>
+
         {isUserLogged ? (
-            <>
+            <div className='navbar-div'>
               <li>
-                  <Link style={{color:"white"}} to="/userinfo">Minhas Informações</Link>
+                  <Link style={{color:"white"}} to="/carrinho"><BiCart size={28} /></Link>
               </li>
-              <li>
-                  <Link to="/home" onClick={handleLogoutClick} style={{color:"white"}}>Logout</Link>
+              <li className='li-item'>
+                  <Link style={{color:"white"}} to="/userinfo"><FaRegUser size={21}/></Link>
               </li>
-            </>
+              <li className='li-sair'>
+                  <Link to="/home" onClick={handleLogoutClick} style={{color:"white"}}>Sair</Link>
+              </li>
+            </div>
         ) : (
-          <li>
-              <Link  style={{color:"white"}} to="/login">Login</Link>
-          </li>
+          <div className='navbar-div'>
+            <li className='li-item'>
+                <Link  style={{color:"white"}} to="/login">Login</Link>
+            </li>
+            <li>
+              <Link style={{color:"white"}} to="/carrinho"><BiCart size={26} /></Link>
+            </li>
+          </div>
         )
         }
-        <li>
-            <Link style={{color:"white"}} to="/carrinho">Carrinho</Link>
-        </li>
        
       </ul>
     </nav>

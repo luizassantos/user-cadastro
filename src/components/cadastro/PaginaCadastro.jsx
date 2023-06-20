@@ -11,9 +11,9 @@ import axios from 'axios';
 
 import useForm from '../../hooks/useForm';
 import { useState } from 'react';
-import PaginaLogin from '../../pages/login/PaginaLogin';
 
-import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
+
 
 const formTemplate = {
   nome: "",
@@ -154,19 +154,23 @@ const PaginaCadastro = ({setIsCadastrar}) => {
             {msg === "Sucesso!!" ? (
               <>
                 <p style={{color:"green"}}>Cadastro Realizado com sucesso!</p>
-                <button onClick={handleClick}>Fazer Login</button> 
+                <button 
+                  onClick={handleClick} 
+                  className='btn'
+                  style={{width:"fit-content"}}
+                >
+                  Fazer Login
+                </button> 
               </>
               
               ):(
               <>
-              {!isFirstStep ? (
+              {!isFirstStep && (
                 <button className='btn btn-voltar' type='button' onClick={() => changeStep(currentStep - 1)}>
                   <GrFormPrevious />
                   <span>Voltar</span>
                 </button>
-            ) : (
-               <a href={"/login"}> Já tenho conta! </a>
-            )}
+              )}
             
               {!isLastStep ? (
                 <button className='btn' type='submit'>
@@ -174,13 +178,23 @@ const PaginaCadastro = ({setIsCadastrar}) => {
                   <GrFormNext className='icon'/>
                 </button>
               ) : 
+              <div>
                 <button className='btn' type='submit'>
                   <span>Enviar</span>
                   <FiSend  />
                 </button>
+              </div>
               }
-              </>
 
+              {isFirstStep && (
+                <div>
+                  <Button href="#text-buttons" color='secondary'>
+                    <a href={"/login"}> Já tenho conta! </a>
+                  </Button> 
+                </div>
+              )}
+              
+            </>
             )}
           </div>
         </form>

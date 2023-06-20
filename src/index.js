@@ -33,7 +33,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <PaginaLogin/>
+    element: <PaginaLogin irCadastrar={false}/>
+  },
+  {
+    path: "/login/cadastro",
+    element: <PaginaLogin irCadastrar={true} />
   }
 ]);
 

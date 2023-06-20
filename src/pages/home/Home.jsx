@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-import axios from 'axios'
 import Produto from '../../components/produtos/Produto';
 
 import './Home.css'
@@ -29,8 +28,6 @@ const Home = () => {
 
   return (
     <div className='all-products-div' >
-      <h1 style={{textAlign: "center"}}>Home</h1>
-      <p style={{textAlign: "center"}}>Produtos</p>
 
       <div >
         <ul className='all-products-ul'>

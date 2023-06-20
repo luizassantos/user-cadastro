@@ -2,18 +2,16 @@ import { useState, useContext } from "react";
 import PaginaCadastro from "../../components/cadastro/PaginaCadastro";
 import './PaginaLogin.css'
 import axios from "axios";
-// import UserInfo from "../../pages/userInfo/UserInfo";
 
 import { UserContext } from "../../context/UserContext";
 
 import { Navigate } from "react-router-dom";
 
-const PaginaLogin = () => {
+const PaginaLogin = ({ irCadastrar }) => {
 
-    const {userData, setUserData} = useContext(UserContext);
-    const {isUserLogged, setIsUserLogged} = useContext(UserContext);
+    const {setUserData, setIsUserLogged} = useContext(UserContext);
 
-    const [isCadastrar, setIsCadastrar] = useState(false);
+    const [isCadastrar, setIsCadastrar] = useState(irCadastrar);
     const [isLoginSucceeded, setIsLoginSucceeded] = useState(false);
     const [isLoginFail, setIsLoginFail] = useState(false);
     const [email, setEmail] = useState("");
@@ -26,8 +24,6 @@ const PaginaLogin = () => {
 
     async function handleSubmit(e){
         e.preventDefault();
-        //verificar se usuário com e-mail e senha colocados no login existe no sistema
-         //se sim: confirmar autenticação do usuário (ir para a página principal)
         try{
             const resp = await axios
             (`http://localhost:3001/users/?email=${email}&senha=${senha}`);
@@ -37,12 +33,10 @@ const PaginaLogin = () => {
                 setIsLoginFail(true)
             } else {
                 console.log("Login feito com sucesso");
-                console.log(resp.data[0]);
                 setUserData(resp.data[0]);
                 setIsLoginSucceeded(true);
                 setIsUserLogged(true);
             }
-    
         } catch(erro){
             console.log(erro)
         }
@@ -89,8 +83,7 @@ const PaginaLogin = () => {
                         </>
                     )}
                 </div>
-            ) 
-            }
+            )}
         </div>
     )
 }

@@ -22,7 +22,8 @@ export const UserProvider = ({ children }) => {
     const [isUserLogged, setIsUserLogged] = useState(false)
     const [userData, setUserData] = useState({});
     const [isEdit, setIsEdit] = useState(false);
-    const [cartProducts, setCartProducts] = useState([])
+    const [cartChanged, setCartChanged] = useState(false)
+
 
 
     return (
@@ -32,7 +33,7 @@ export const UserProvider = ({ children }) => {
                 isUserLogged, setIsUserLogged,
                 isEdit, setIsEdit,
                 formTemplate,
-                cartProducts, setCartProducts
+                cartChanged, setCartChanged
             }
             }>
             {children}

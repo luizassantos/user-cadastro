@@ -4,13 +4,15 @@
     justify-content: space-evenly;
     align-items: center;
 
-    border: 1px solid gray;
+    box-shadow: 2px 2px 10px #dbdbdb;
     border-radius: 7px;
     text-align: center;
 
     padding: 10px 15px;
     max-width: 230px;
     margin: 15px;
+
+    background-color: #fff;
 }
 
 .product-nome{
@@ -18,7 +20,6 @@
 }
 
 .product-img{
-    /* width: 130px; */
     height: 150px;
     border-radius: 7px;
     text-align: center;
@@ -38,13 +39,17 @@
 }
 
 .product-btn-add:hover{
-    background-color: #d5f2e8;
+    background-color: #e6f7ea;
 }
 
 .product-btn-add{
     border: 1px solid green;
     background-color: white;
     color: green;
+}
+
+.product-btn-add:active{
+    background-color: #a9d8b4;
 }
 
 .product-btn-delete{
@@ -55,4 +60,116 @@
 
 .product-btn-delete:hover{
     background-color: #fdd9d7;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.li-cp{
+    display: flex;
+    flex-direction: row;
+    min-width: 50vw;
+    justify-content: space-evenly;
+}
+
+.product-img-cp{
+    height: 200px;
+    border-radius: 7px;
+}
+
+.p-nome-cart{
+    font-size: 19px;
+}
+
+.p-price-cart{
+    font-size: 17px;
+}
+
+.quant-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    margin: 0px 10px 10px 0;
+    text-align: center;
+    padding: 1px 2px;
+
+}
+
+.btn-mais,
+.btn-menos{
+    padding: 2px 5px 0 5px;
+}
+
+.btn-mais:hover,
+.btn-menos:hover{
+    cursor: pointer;
+}
+.btn-mais:active,
+.btn-menos:active{
+    background-color: #f7efef;
+}
+
+.num-quatidade {
+    width: 25px;
+    text-align: center;
+    justify-items: center;
+
+    font-size: 14px;
+    text-align: center;
+    padding-right: 0 25;
+}
+
+.q-container{
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+    align-items: center;
+}
+
+.trash-icon{
+    cursor: pointer;
+}
+.trash-icon:hover{
+    color: #e0354f;
+}
+
+@media (max-width: 575px) {
+    .product-img {
+        height: 100px;
+    }
+    .product-img-cp{
+        height: 110px ;
+    }
+    .product-li{
+        max-width: 95vw;
+    }
+    .p-nome-cart{
+        font-size: 17px;
+    }
+    .p-price-cart{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    .product-img {
+        height: 100px;
+    }
+    .product-img-cp{
+        height: 130px ;
+    }
+    .product-li{
+        max-width: 95vw;
+    }
+    .p-nome-cart{
+        font-size: 18px;
+    }
+    .p-price-cart{
+        font-size: 16px;
+    }
 }

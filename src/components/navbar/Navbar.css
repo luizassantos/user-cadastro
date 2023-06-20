@@ -1,15 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
+
+
 .navbar-container{
     background-color: #a54958;
-    width: 100vw;
     padding: 1.5rem 1rem;
+    align-items: center;
+    width: 100%;
 }
 
 .navbar-ul{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     
+}
+
+.navbar-div{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
 }
 
 li{
     list-style: none;
+    margin-right: 10px;
+    /* font-size: 14px; */
+}
+
+.li-item{
+    margin-right: 15px;
+}
+
+/* .li-sair{
+    font-size: 15px;
+} */
+
+@media (max-width: 575px) {
+    .logo {
+        font-size: 1.4rem;
+    }
+    .produtos-link{
+        display: none;
+    }
 }

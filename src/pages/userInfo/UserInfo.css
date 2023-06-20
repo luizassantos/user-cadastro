@@ -38,7 +38,7 @@
     text-align: center;
 
     border: 1px solid brown;
-    background-color: white;
+    background-color: #f6f6f6;
     color: brown;
 }
 
@@ -71,3 +71,29 @@
     background-color: red;
 }
 
+@media  (max-width: 900px) {
+    .infopage-title,
+    .page-name,
+    .infopage-subtitle{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .infopage-data-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;    
+    }
+
+    .info-update-instructions{
+        margin-top: 10px;
+        padding-top: 0;
+    }
+    .h3-logged{
+        text-align: center;
+        margin-bottom: 0;
+
+    }
+}

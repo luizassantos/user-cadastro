@@ -1,0 +1,53 @@
+.cart-empty{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.h3-notlogged{
+    margin: 15px 0;
+}
+
+.p-notlogged{
+    margin-top: 10px;
+}
+
+.h4-logged{
+    font-weight: lighter;
+    margin: 15px 0;
+    font-size: 18px;
+}
+.h3-logged{
+    margin: 15px 0;
+    font-size: 28px;
+}
+
+.logged-cart-container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.preco-total-c{
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fff;
+
+    box-shadow: 2px 2px 7px #dbdbdb;
+    width: fit-content;
+    height: fit-content;
+}
+
+@media  (max-width: 900px) {
+    .logged-cart-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+    
+    }
+    .h3-logged{
+        text-align: center;
+        margin-bottom: 0;
+
+    }
+}

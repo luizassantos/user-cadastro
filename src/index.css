@@ -7,14 +7,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background-image: url("https://cdn.awsli.com.br/1000x1000/1709/1709525/produto/170052863/97537c9868.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+body{
+    background-color: #f6f6f6;
+}

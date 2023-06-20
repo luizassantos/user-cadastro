@@ -40,3 +40,15 @@
 .btn-salvar{
     margin-bottom: 5px;
 }
+
+@media  (max-width: 900px) {
+    .single-data-container{
+        width: 75vw;
+    }
+}
+@media  (max-width: 700px) {
+    .single-data-container{
+        width: 95vw;
+        
+    }
+}
