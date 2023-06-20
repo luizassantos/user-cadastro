@@ -89,7 +89,7 @@ const UserInfo = () => {
             </div>
 
             <div className='div-btn-excluir'>
-              <a href='/home'>
+              <a href='/'>
                 <button 
                   className='btn-excluir-conta' 
                   onClick={deleteAccount}

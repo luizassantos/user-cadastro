@@ -46,7 +46,7 @@ const PaginaLogin = ({ irCadastrar }) => {
         <div className="body-login">
             {isCadastrar ? <PaginaCadastro setIsCadastrar={setIsCadastrar}/> : (
                 <div className="container-login">
-                    {isLoginSucceeded ? <Navigate to="/home" />  :(
+                    {isLoginSucceeded ? <Navigate to="/" />  :(
                         <>
                             <h1 className="title-login">Fazer Login</h1>
                             {isLoginFail && <p style={{color:"red"}}>Usuário não encontrado</p>}

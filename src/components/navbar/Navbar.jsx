@@ -26,11 +26,11 @@ const Navbar = () => {
     <nav className='navbar-container'>
       <ul className='navbar-ul'>
         <li className='produtos-link'>
-            <Link style={{color:"white", textDecoration:"none"}} to="/home">PRODUTOS</Link>
+            <Link style={{color:"white", textDecoration:"none"}} to="/">PRODUTOS</Link>
         </li>
 
         <li className='logo'>
-          <Link to="/home" className='logo'> LutasPRO </Link>
+          <Link to="/" className='logo'> LutasPRO </Link>
         </li>
 
         {isUserLogged ? (
@@ -42,7 +42,7 @@ const Navbar = () => {
                   <Link style={{color:"white"}} to="/userinfo"><FaRegUser size={21}/></Link>
               </li>
               <li className='li-sair'>
-                  <Link to="/home" onClick={handleLogoutClick} style={{color:"white"}}>Sair</Link>
+                  <Link to="/" onClick={handleLogoutClick} style={{color:"white"}}>Sair</Link>
               </li>
             </div>
         ) : (
